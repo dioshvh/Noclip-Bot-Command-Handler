@@ -18,24 +18,6 @@ client.aliases = new Collection();
     require(`./handlers/${handler}`)(client);
 })
 
-
-//Server ping
-
-keepAlive();
-const monitor = new Monitor({
-	website: '----------------------------',
-	title: 'Secundario',
-	interval: 15 // Minutes
-})
-monitor.on('up', res => console.log(`${res.website} está encedido.`));
-monitor.on('down', res =>
-	console.log(`${res.website} se ha caído - ${res.statusMessage}`)
-);
-monitor.on('stop', website => console.log(`${website} se ha parado.`));
-monitor.on('error', error => console.log(error));
-
-
-
 //Estado del bot
 
 client.once('ready', () => {
