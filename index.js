@@ -3,24 +3,8 @@
 //   FREE DOWNLOAD ?¿  //
 
 const { Client, Collection } = require("discord.js");
-const { config } = require("dotenv");
-const keepAlive = require('./server');
-const Monitor = require('ping-monitor');
 const Discord = require("discord.js");
 const fs = require("fs");
-const express = require('express')
-const server = express();
-const { CanvasSenpai } = require("canvas-senpai")
-const canva = new CanvasSenpai();
-const { readdirSync } = require("fs");
-const { join } = require("path");
-
-//DataBase
-
-const db = require("quick.db")
-const { addexp } = require("./handlers/xp.js")
-const { token, default_prefix } = require("./config.json");
-
 const discord = require("discord.js")
 const client = new Client({
     disableEveryone: true
@@ -128,27 +112,6 @@ client.channels.resolve(m.id).send(embed)
   if(message.channel.name == "noclipchat") return message.delete()
 });
 
-client.on("guildMemberAdd", async member => {
-let chx = db.get(`welchannel_${member.guild.id}`);
-
-  if (chx === null) {
-    return;
-  }
-
-  
-   let data = await canva.welcome(member, { link: "------------------------", blur: false})
-
-    const attachment = new discord.MessageAttachment(
-      data,
-      "----------------------"
-    );
-  
-  
-
-
-  client.channels.cache.get(chx).send("----------------------------- , " + member.user.username, attachment);
-
-});
 
 client.login(token);
 
