@@ -1,4 +1,4 @@
-// NOCLIP BOT BY ZDRAR //
+// NOCLIP BOT BY Z //
 //  NO COPY & PASTE    //
 //   FREE DOWNLOAD ?¿  //
 
@@ -97,6 +97,6 @@ client.channels.resolve(m.id).send(embed)
 
 client.login(token);
 
-// NOCLIP BOT BY ZDRAR //
+// NOCLIP BOT BY Z //
 //  NO COPY & PASTE    //
 //   FREE DOWNLOAD ?¿  //
