@@ -23,8 +23,8 @@ client.aliases = new Collection();
 client.once('ready', () => {
 console.log('NoClip ON');
 let statuses = [
-'[🎬] NoClip | v2',
-'[🛠] .help',
+'[🎬] by nosoyz#1000',
+'[🛠] uwu',
 `[💿] ${client.users.cache.size} Usuarios`,
 `[📀] ${client.guilds.cache.size} Servidores`
 ];
@@ -55,43 +55,6 @@ client.on("message", async message => {
 
     return addexp(message)
 })
-
-//GLOBAL CHAT //BETA
-
-client.on("message", async message => { 
- if (message.author.bot) return;
-let canal = client.channels.cache.filter(c => c.name == "noclipchat");
-
-  const embed = new Discord.MessageEmbed()
-  .setAuthor(message.author.tag, message.author.displayAvatarURL())
-  .setFooter("Enviado desde " + message.guild.name, message.guild.iconURL())
-  .setDescription(message)
-  .setColor("RANDOM")
-  .setTimestamp()
- const array = ["discord.gg", "discord.me", "discord.io/", "discordapp.com/invite", "https:", ".com", ".net"]
- if(message.channel.name == "noclipchat"){
- if(array.some(word =>
-
-    message.content.toLowerCase().includes(word))){
-    message.delete()
-
-    message.reply(' `----------------------`').then(response =>{
-
-    response.delete(5000) 
-      
-                });
-}else{
-canal.forEach(m => {
-client.channels.resolve(m.id).send(embed) 
-
-         });
-    }
-    }
-    if(!message.channel.name == "noclipchat") return;
-                   
-
-
-  if(message.channel.name == "noclipchat") return message.delete()
 });
 
 
